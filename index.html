@@ -85,7 +85,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">GO-NeRF: Generating Virtual Objects in Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">GO-NeRF: Generating Objects in Neural Radiance Fields for Virtual Reality Content Creation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://daipengwa.github.io/">Peng Dai</a><sup>1</sup>,</span>
@@ -94,6 +94,9 @@
             </span>
             <span class="author-block">
               <a href="https://github.com/XinYu-Andy">Xin Yu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=UMveGGwAAAAJ&hl=en">Yifan Peng</a><sup>1</sup>
             </span>
             <span class="author-block">
               <a href="https://www.zhangyinda.com/">Yinda Zhang</a><sup>2</sup>,</span>
@@ -255,23 +258,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Despite advances in 3D generation, the direct creation of 3D objects within an existing 3D scene represented as NeRF
-            remains underexplored. This process requires not only high quality 3D object generation but also seamless composition 
-            of the generated 3D content into the existing NeRF.
-            To this end, we propose a new method, GO-NeRF, capable
-            of utilizing scene context for high-quality and harmonious
-            3D object generation within an existing NeRF. Our method
-            employs a compositional rendering formulation that allows
-            the generated 3D objects to be seamlessly composited into
-            the scene utilizing learned 3D-aware opacity maps without
-            introducing unintended scene modification. Moreover, we
-            also develop tailored optimization objectives and training
-            strategies to enhance the model’s ability to exploit scene
-            context and mitigate artifacts, such as floaters, originating
-            from 3D object generation within a scene. Extensive experiments on both forward-facing and 360^o scenes show the superior performance of our proposed GO-NeRF in generating
-            objects harmoniously composited with surrounding scenes
-            and synthesizing high-quality novel view images. Code will
-            be made publicly available.
+            Virtual environments (VEs) are pivotal for virtual, augmented, and mixed reality systems. Despite advances in 3D generation and reconstruction, the direct creation of 3D objects within an established 3D scene (represented as NeRF) for novel VE creation remains a relatively unexplored domain. This process is complex, requiring not only the generation of high-quality 3D objects but also their seamless integration into the existing scene. To this end, we propose a novel pipeline featuring an intuitive interface, dubbed GO-NeRF. Our approach takes text prompts and user-specified regions as inputs and leverages the scene context to generate 3D objects within the scene. We employ a compositional rendering formulation that effectively integrates the generated 3D objects into the scene, utilizing optimized 3D-aware opacity maps to avoid unintended modifications to the original scene. Furthermore, we develop tailored optimization objectives and training strategies to enhance the model’s ability to capture scene context and mitigate artifacts, such as floaters, that may occur while optimizing 3D objects within the scene. Extensive experiments conducted on both forward-facing and 360^o scenes demonstrate the superior performance of our proposed method in generating objects that harmonize with surrounding scenes and synthesizing high-quality novel view images. We are committed to making our code publicly available.
           </p>
         </div>
       </div>
@@ -311,7 +298,7 @@
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results on the same scene with different text prompts</h2>
+        <h2 class="title is-3">Same scene with different text prompts</h2>
         <!-- <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/hAhFfKRqDgE"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -356,6 +343,42 @@
           <div class="column">
             <div class="content">
               <video id="lego" autoplay controls muted loop playsinline height="100%">
+                <source src="./contents/VR2025_clothes.mp4"
+                        type="video/mp4">
+              </video>
+              <p>
+                "A pile of messy clothes"
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <video id="chair" autoplay controls muted loop playsinline height="100%">
+                <source src="./contents/VR2025_wooden_box.mp4"
+                        type="video/mp4">
+              </video>
+              <p>
+                "A wooden box"  
+              </p>
+            </div>
+          </div>
+          <div class="column">
+              <div class="content">
+                <video id="lego" autoplay controls muted loop playsinline height="100%">
+                  <source src="./contents/VR2025_lego.mp4"
+                          type="video/mp4">
+                </video>
+                <p>
+                  "a lego house" 
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+              <video id="lego" autoplay controls muted loop playsinline height="100%">
                 <source src="./contents/bench.mp4"
                         type="video/mp4">
               </video>
@@ -367,22 +390,22 @@
           <div class="column">
             <div class="content">
               <video id="chair" autoplay controls muted loop playsinline height="100%">
-                <source src="./contents/a_plush_toy_pikachu.mp4"
+                <source src="./contents/VR2025_spider.mp4"
                         type="video/mp4">
               </video>
               <p>
-                "a plush toy Pikachu"  
+                "a spider on the ground"  
               </p>
             </div>
           </div>
           <div class="column">
               <div class="content">
                 <video id="lego" autoplay controls muted loop playsinline height="100%">
-                  <source src="./contents/a_traffic_cone.mp4"
+                  <source src="./contents/VR2025_gray_hedgehog.mp4"
                           type="video/mp4">
                 </video>
                 <p>
-                  "a traffic cone" 
+                  "A gray hedgehog lying on the ground" 
                 </p>
               </div>
           </div>
@@ -439,84 +462,38 @@
           <div class="column">
             <div class="content">
               <video id="chair" autoplay controls muted loop playsinline height="100%">
-                <source src="./contents/a_wooden_boat.mp4"
+                <source src="./contents/VR2025_boat.mp4"
                         type="video/mp4">
               </video>
               <p>
-                "a wooden boat"  
+                "a boat"  
               </p>
             </div>
           </div>
           <div class="column">
               <div class="content">
                 <video id="lego" autoplay controls muted loop playsinline height="100%">
-                  <source src="./contents/a_boat.mp4"
+                  <source src="./contents/VR2025_old_boat.mp4"
                           type="video/mp4">
                 </video>
                 <p>
-                  "a boat" 
+                  "an old boat" 
                 </p>
               </div>
           </div>
         </div>
 
-        <div class="columns is-centered">
-          <div class="column">
-            <div class="content">
-              <video id="lego" autoplay controls muted loop playsinline height="100%">
-                <source src="./contents/a_puppy_standing_on_the_ground.mp4"
-                        type="video/mp4">
-              </video>
-              <p>
-                "a puppy standing on the ground" 
-              </p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="content">
-              <video id="chair" autoplay controls muted loop playsinline height="100%">
-                <source src="./contents/a_backpack.mp4"
-                        type="video/mp4">
-              </video>
-              <p>
-                "a backpack"  
-              </p>
-            </div>
-          </div>
-          <div class="column">
-              <div class="content">
-                <video id="lego" autoplay controls muted loop playsinline height="100%">
-                  <source src="./contents/spider.mp4"
-                          type="video/mp4">
-                </video>
-                <p>
-                  "a spider" 
-                </p>
-              </div>
-          </div>
-        </div>
 
-        <h2 class="title is-3">Results on the same text prompt with different scene styles</h2>
+        <h2 class="title is-3">Same text prompt with different scene styles</h2>
         <div class="columns is-centered">
           <div class="column">
             <div class="content">
               <video id="lego" autoplay controls muted loop playsinline height="100%">
-                <source src="./contents/a_cat.mp4"
+                <source src="./contents/VR2025_cat.mp4"
                         type="video/mp4">
               </video>
               <p>
                 "a cat" 
-              </p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="content">
-              <video id="chair" autoplay controls muted loop playsinline height="100%">
-                <source src="./contents/real_cat.mp4"
-                        type="video/mp4">
-              </video>
-              <p>
-                "a cat"  
               </p>
             </div>
           </div>
@@ -533,11 +510,53 @@
           </div>
         </div>
 
+        <h2 class="title is-3">Generating multiple objects with the scene</h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+              <video id="lego" autoplay controls muted loop playsinline height="100%">
+                <source src="./contents/VR2025_pikachu.mp4"
+                        type="video/mp4">
+              </video>
+              <p>
+                "Pikachu + Traffic cone + Backpack" 
+              </p>
+            </div>
+          </div>
+          <div class="column">
+              <div class="content">
+                <video id="lego" autoplay controls muted loop playsinline height="100%">
+                  <source src="./contents/VR2025_bird_chair.mp4"
+                          type="video/mp4">
+                </video>
+                <p>
+                  "Bird + Chair" 
+                </p>
+              </div>
+          </div>
+        </div>
+
+        <h2 class="title is-3">Stereoscopic Videos</h2>
+        <p> In VR headsets, use the web browser to enter this webpage, you need to choose one of the following cases. After this, you can enjoy the 3D video.</p>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+              <a href="https://daipengwa.github.io/GoNeRF-Pumpkin/"><img src="./contents/stereo_pumpkin.png"></a>,&nbsp&nbsp&nbsp&nbsp 
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <a href="https://daipengwa.github.io/GONeRF-Pikachu/"><img src="./contents/stereo_pikachu.png"></a>,&nbsp&nbsp&nbsp&nbsp 
+            </div>
+          </div>
+        </div>
+
         <!-- More results -->
-        <h2 class="title is-3">More Results</h2>
+        <!-- <h2 class="title is-3">More Results</h2>
             <img src="./contents/rebuttal.png"
             class="interpolation-image"
-            alt="Interpolate start reference image."/>
+            alt="Interpolate start reference image."/> -->
         <!--/ More results -->
       </div>
     </div>
